@@ -167,13 +167,13 @@ public class Utilities : Object {
 		return list;
 	}
 
-	public static void set_clipboard_text(Gtk.Widget widget, string text) {
-		var clipboard = Gtk.Clipboard.get_for_display(widget.get_display(), Gdk.SELECTION_CLIPBOARD);
+	public static void set_clipboard_text(string text) {
+		var clipboard = Gtk.Clipboard.get_for_display(Gdk.Display.get_default(), Gdk.SELECTION_CLIPBOARD);
 		clipboard.set_text(text, -1);
 	}
 
 	public static string get_clipboard_text() {
-		var clipboard = Gtk.Clipboard.get_for_display(Gdk.Display.get_default(), Gdk.SELECTION_CLIPBOARD); // What's the difference between `Gdk.Display.get_default()` and `widget.get_display()` as seen in `set_clipboard_text()` ?
+		var clipboard = Gtk.Clipboard.get_for_display(Gdk.Display.get_default(), Gdk.SELECTION_CLIPBOARD);
 		return clipboard.wait_for_text();
 	}
 

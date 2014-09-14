@@ -171,6 +171,12 @@ public class TerminalWidget : GtkClutter.Embed, NestingContainerChild {
 		});
 		context_menu.append(menu_item);
 
+		menu_item = new Gtk.MenuItem.with_label(_("Copy current command"));
+		menu_item.activate.connect(() => {
+			Utilities.set_clipboard_text(terminal.terminal_output.get_command());
+		});
+		context_menu.append(menu_item);
+
 		context_menu.append(new Gtk.SeparatorMenuItem());
 
 		// Split-view menu items
