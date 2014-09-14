@@ -18,8 +18,6 @@ hide = TOGGLE_VISIBLE
 full = TOGGLE_FULLSCREEN
 
 tab    = ADD_TAB "%1"
-copy   = COPY
-paste  = PASTE
 splith = SPLIT "HORIZONTALLY"
 splitv = SPLIT "VERTICALLY"
 close  = CLOSE

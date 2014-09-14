@@ -32,7 +32,6 @@ public class Command : Object {
 		TOGGLE_FULLSCREEN,
 		TOGGLE_DROPDOWN,
 		ADD_TAB,
-		PASTE,
 		SPLIT,
 		CLOSE,
 		LOG,
