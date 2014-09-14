@@ -161,7 +161,19 @@ public class TerminalWidget : GtkClutter.Embed, NestingContainerChild {
 		});
 		context_menu.append(menu_item);
 
+		// Clipboard menu items
+
 		context_menu.append(new Gtk.SeparatorMenuItem());
+
+		menu_item = new Gtk.MenuItem.with_label(_("Paste"));
+		menu_item.activate.connect(() => {
+			terminal.send_text(Utilities.get_clipboard_text());
+		});
+		context_menu.append(menu_item);
+
+		context_menu.append(new Gtk.SeparatorMenuItem());
+
+		// Split-view menu items
 
 		menu_item = new Gtk.MenuItem.with_label(_("Split Horizontally"));
 		menu_item.activate.connect(() => {
